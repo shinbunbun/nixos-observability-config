@@ -26,6 +26,8 @@
       assets = {
         alertRules = ./assets/alert-rules.nix;
         dashboards = ./assets/dashboards;
+        lokiRules = ./assets/loki-rules.yaml;
+        snmpConfig = ./assets/snmp.yml;
       };
 
       lib = {
