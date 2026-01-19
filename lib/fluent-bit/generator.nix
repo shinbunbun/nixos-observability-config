@@ -144,6 +144,15 @@ let
         Match               journal.*
         Remove_key          extracted_level
 
+    # calendar-botのnginxアクセスログをinfoレベルに修正
+    # Dockerコンテナのstdoutログが誤ってPRIORITY=3（error）で記録される問題を修正
+    [FILTER]
+        Name                modify
+        Match               journal.*
+        Condition           Key_Value_Equals CONTAINER_NAME calendar-bot
+        Condition           Key_Value_Equals priority_fallback error
+        Set                 priority_fallback info
+
     # RouterOSログの処理
     [FILTER]
         Name                modify
