@@ -222,7 +222,7 @@
       # ネットワークインターフェースダウン
       {
         alert = "NetworkInterfaceDown";
-        expr = "node_network_up{device!~\"lo|docker.*|veth.*|br.*|tap.*|tun.*|wlp[0-9]s0|wg.*|enp4s0|enp6s0f1\"} == 0";
+        expr = "node_network_up{device!~\"lo|docker.*|veth.*|br.*|tap.*|tun.*|wlp[0-9]s0|wg.*|flannel.*|enp4s0|enp6s0f1\"} == 0";
         for = "2m";
         labels = {
           severity = "critical";
